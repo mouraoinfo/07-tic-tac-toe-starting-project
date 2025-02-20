@@ -1,13 +1,12 @@
+import Player from "./components/Player"
 
 function App() {
   
 
   return (
     <>
-    <h3>React Tic-Tac-Toe</h3>
-    <p>Coming soon...</p>
+      <p>Coming soon...</p>
     </>
-    
   )
 }
 
