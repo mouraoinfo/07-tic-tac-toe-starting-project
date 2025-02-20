@@ -2,7 +2,7 @@ import Player from "./components/Player"
 
 function App() {
   
-
+// App
   return (
       <main>
         <div id="game-container">
