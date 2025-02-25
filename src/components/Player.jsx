@@ -6,8 +6,7 @@ export default function Player({name, symbol}) {
 
 
     function handleSave() {
-        setEditing(!editing);
-     
+        setEditing((editing) => !editing);
     }
 
     let playerName = editing ? (
