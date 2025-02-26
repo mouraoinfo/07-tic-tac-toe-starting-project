@@ -107,7 +107,7 @@ h1 {
   font-weight: bold;
 }
 
-.player-name {
+.player-name, .user-name {
   display: inline-block;
   width: 10rem;
   font-size: 1rem;
@@ -132,7 +132,7 @@ h1 {
   text-transform: uppercase;
 }
 
-.player-symbol {
+.player-symbol, .user-email {
   margin-left: 1rem;
   font-size: 1rem;
   color: #e1dec7;
