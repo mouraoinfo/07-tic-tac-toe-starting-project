@@ -10,7 +10,7 @@ export default function Player({name, symbol}) {
     }
 
     let playerName = editing ? (
-        <input type="text" value={newName} onChange={(e) => setNewName(e.target.value)} />
+        <input type="text" value={newName} onChange={(e) => setNewName(e.target.value)} required/>
     ) : (
         <span className="player-name">{newName}</span>
     );
@@ -26,9 +26,11 @@ export default function Player({name, symbol}) {
         <span className="player">
             <span className="player-name"> {playerName}</span> 
             <span className="player-symbol">{symbol}</span> 
+            
         </span>
        
         {saveButton}
+  
         </li>
     );
     }

@@ -1,7 +1,12 @@
 import Player from "./components/Player"
-import User from "./components/User"
+
+
+
+
 
 function App() {
+
+
   
 // App
   return (
@@ -15,9 +20,12 @@ function App() {
 
           </div>
            GAME BOARD
-        </div>
 
+        </div>
+     
         LOG
+  
+
       </main>
   )
 }
