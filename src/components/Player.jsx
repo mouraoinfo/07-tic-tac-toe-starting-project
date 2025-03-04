@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-export default function Player({name, symbol}) {
+export default function Player({inicialName, symbol}) {
     const [isEditing, setIsEditing] = useState(false);
-    const [newName, setNewName] = useState(name);
+    const [newName, setNewName] = useState(inicialName);
 
 
-    function handleSave() {
+    function handleChange() {
         setIsEditing((editing) => !editing);
     }
 
@@ -16,9 +16,9 @@ export default function Player({name, symbol}) {
     );
 
     let saveButton = isEditing ? (
-        <button onClick={handleSave}>Save</button>
+        <button onClick={handleChange}>Save</button>
     ) : (
-        <button onClick={handleSave}>Edit</button>
+        <button onClick={handleChange}>Edit</button>
     );
 
     return (
