@@ -1,12 +1,10 @@
 import { useState } from "react";
 
-
 const inicialGameBoard = [
 [null, null, null],
 [null, null, null],
 [null, null, null] 
 ];
-
 
 export default function GameBoard() {
 
@@ -15,13 +13,15 @@ export default function GameBoard() {
     function handleSelectSquare (rowIndex, cellIndex) {
         setGameBoard((prevGameBoard) => {
             const updateBoard = [...prevGameBoard.map(innerArray => [...innerArray])];
-            updateBoard[rowIndex][cellIndex]  = 'x';
+            
+            let simbolo =  prevGameBoard.flat().filter(cell => cell !== null).length % 2 === 0 ? 'X' : '0';
+
+            updateBoard[rowIndex][cellIndex]  = simbolo;
             return updateBoard;
         }
 
         );
     }
-
 
 
   return (
