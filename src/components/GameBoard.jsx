@@ -28,25 +28,27 @@ export default function GameBoard() {
 
   return (
     <>
-        <ol>
-            {gameBoard.map((row, rowIndex) => (
-                <li key={rowIndex}>
-                    <ol>
-                        {row.map(
-                            (cell, cellIndex) => (
-                                <li key={cellIndex}>
-                                    <button onClick={ ()=> handleSelectSquare(rowIndex, cellIndex) }>
-                                        {cell}
-                                    </button>
-                                </li>
-                            )
-                        )}
-                    </ol>
-                </li>
-            )
+    <ol>
+        {gameBoard.map((row, rowIndex) => (
+            <li key={rowIndex}>
+                <ol>
+                    {row.map((cell, cellIndex) => (
+                        <li key={cellIndex}>
+                            <button onClick={ () => handleSelectSquare(rowIndex, cellIndex) } >
+                                {cell}
+                            </button>
+                        </li>
+                    )
 
-            )}
-        </ol>
+                    )
+                    }
+                </ol>
+            </li>
+        )
+
+        )
+        }
+    </ol>
     </>
 );
 
