@@ -1,10 +1,12 @@
 import { useState } from "react";
 
 const inicialGameBoard = [
-[null, null, null],
-[null, null, null],
-[null, null, null] 
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9] 
 ];
+
+
 
 export default function GameBoard() {
 
@@ -25,24 +27,33 @@ export default function GameBoard() {
 
 
   return (
-    <ol id="game-board">
-        {gameBoard.map((row, rowIndex) => (
-            
-            <li key={rowIndex}>
-           
-                <ol>
-                    {row.map((cell, cellIndex) => (
-                        <li key={cellIndex} className="cell">
-                            <button className="cell-button" onClick={() =>handleSelectSquare(rowIndex, cellIndex)}>
-                                {cell}
-                            </button>
-                        </li>
-      
-                    ))}
-                </ol>
-            </li>
-        ))}
+    <>
+        <h1>Game Board</h1>
 
-    </ol>
+        <ol>
+            {gameBoard.map((row, rowIndex) => (
+                <li key={rowIndex}>
+                                    <ol>
+                                        {row.map((cell, cellIndex) => (
+                                            <li key={cellIndex}>
+                                                    <button onClick={() => handleSelectSquare(rowIndex, cellIndex)} >
+                                                        {cell}
+                                                    </button>
+                                            </li>
+                                        )
+
+                                        )
+                                        }
+                                    </ol>
+                </li>
+            )
+
+            )
+            }
+        </ol>
+
+
+    </>
 );
+
 }
