@@ -1,12 +1,14 @@
 import { useState } from "react";
 
 const inicialGameBoard = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9] 
+    [null, null, null],
+    [null, null, null],
+    [null, null, null],
 ];
 
-
+/* O método  HandleSelectSquare, ainda não foi implementado nos tutoriais do curso.
+Ele deve ser implementado nos passos seguintes. 
+Este que está presente no arquivo, trata-se de um teste feito com ajuda de IA */
 
 export default function GameBoard() {
 
@@ -28,14 +30,14 @@ export default function GameBoard() {
 
   return (
     <>
-    <ol>
+    <ol id="game-board">
         {gameBoard.map((row, rowIndex) => (
             <li key={rowIndex}>
                 <ol>
-                    {row.map((cell, cellIndex) => (
-                        <li key={cellIndex}>
-                            <button onClick={ () => handleSelectSquare(rowIndex, cellIndex) } >
-                                {cell}
+                    {row.map((playerSymbol, colIndex) => (
+                        <li key={colIndex}>
+                            <button onClick={ () => handleSelectSquare(rowIndex, colIndex) } >
+                                {playerSymbol}
                             </button>
                         </li>
                     )
