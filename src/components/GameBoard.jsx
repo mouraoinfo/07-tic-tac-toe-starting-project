@@ -14,14 +14,20 @@ export default function GameBoard() {
 
     const [gameBoard, setGameBoard] = useState(inicialGameBoard);
 
-    function handleSelectSquare (rowIndex, cellIndex) {
+    function handleSelectSquare (rowIndex, colIndex) {
         setGameBoard((prevGameBoard) => {
             const updateBoard = [...prevGameBoard.map(innerArray => [...innerArray])];
             
-            let simbolo =  prevGameBoard.flat().filter(cell => cell !== null).length % 2 === 0 ? 'X' : '0';
+          
 
-            updateBoard[rowIndex][cellIndex]  = simbolo;
-            return updateBoard;
+            if (prevGameBoard[rowIndex][colIndex] === null) {
+
+                let simbolo =  prevGameBoard.flat().filter(cell => cell !== null).length % 2 === 0 ? 'X' : '0';
+                updateBoard[rowIndex][colIndex]  = simbolo;
+                return updateBoard;
+            } 
+
+           return prevGameBoard;
         }
 
         );
