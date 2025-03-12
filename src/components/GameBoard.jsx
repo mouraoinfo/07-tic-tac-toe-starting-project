@@ -22,8 +22,8 @@ export default function GameBoard() {
 
             if (prevGameBoard[rowIndex][colIndex] === null) {
 
-                let simbolo =  prevGameBoard.flat().filter(cell => cell !== null).length % 2 === 0 ? 'X' : '0';
-                updateBoard[rowIndex][colIndex]  = simbolo;
+               
+                updateBoard[rowIndex][colIndex]  = 'Ⓜ️';
                 return updateBoard;
             } 
 
