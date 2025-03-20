@@ -3,14 +3,19 @@ import { useState } from "react"
 import Player from "./components/Player"
 import GameBoard from "./components/GameBoard"
 
+import Log from "./components/Log"
+
 
 
 function App() {
 
+  // o step 83 não teve avanços significativos, apenas explicação de conceitos
+  const [gameTurns, setGameTurns] = useState([]);
   const [activePlayer, SetActivePlayer] = useState('X');
 
   function handleSelectSquare () {
     SetActivePlayer((curActivePlayer) => curActivePlayer === 'X' ? 'O' : 'X');
+    setGameTurns();
   }
 
 
@@ -28,7 +33,7 @@ function App() {
            
         </div>
      
-        LOG
+        <Log />
   
 
       </main>
