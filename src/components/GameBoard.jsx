@@ -6,32 +6,24 @@ const inicialGameBoard = [
     [null, null, null],
 ];
 
-/* O método  HandleSelectSquare, ainda não foi implementado nos tutoriais do curso.
-Ele deve ser implementado nos passos seguintes. 
-Este que está presente no arquivo, trata-se de um teste feito com ajuda de IA */
 
-export default function GameBoard() {
+
+export default function GameBoard( { onSelectSquare, playerSymbol } ) {
 
     const [gameBoard, setGameBoard] = useState(inicialGameBoard);
 
     function handleSelectSquare (rowIndex, colIndex) {
-        setGameBoard((prevGameBoard) => {
-            const updateBoard = [...prevGameBoard.map(innerArray => [...innerArray])];
-            
-          
-
-            if (prevGameBoard[rowIndex][colIndex] === null) {
-
-               
-                updateBoard[rowIndex][colIndex]  = 'Ⓜ️';
-                return updateBoard;
-            } 
-
-           return prevGameBoard;
-        }
-
+        setGameBoard(
+            (prevGameBoard) => {
+                const updatedBoard = [...prevGameBoard.map( innerArray => [...innerArray] )];
+                updatedBoard[rowIndex][colIndex] = playerSymbol;
+                return updatedBoard;
+            }
         );
+            onSelectSquare();
     }
+
+  
 
 
   return (
