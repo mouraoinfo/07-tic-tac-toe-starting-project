@@ -13,9 +13,15 @@ function App() {
   const [gameTurns, setGameTurns] = useState([]);
   const [activePlayer, SetActivePlayer] = useState('X');
 
-  function handleSelectSquare () {
+  function handleSelectSquare (rowIndex, colIndex) {
     SetActivePlayer((curActivePlayer) => curActivePlayer === 'X' ? 'O' : 'X');
-    setGameTurns();
+    setGameTurns( prevTurns => {
+      
+       
+      
+      const updatedTurns =[{ square: {row: rowIndex, col: colIndex }, player: activePlayer }, 
+          ...prevTurns];
+    } );
   }
 
 
@@ -33,8 +39,7 @@ function App() {
            
         </div>
      
-        <Log />
-  
+          <Log  />
 
       </main>
   )
