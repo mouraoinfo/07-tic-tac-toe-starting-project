@@ -44,7 +44,7 @@ function App() {
       <main>
         <div id="game-container">
           <ol id="players"  className="highlight-player">
-            <Player inicialName="Player 1" symbol="X" isActive={activePlayer === 'X'} />
+            <Player inicialName="Player 1" symbol="X" isActive={activePlayer === 'X'} />x
             <Player inicialName="Player 2" symbol="O" isActive={activePlayer === 'O'} />
           </ol>
           <div id="game-board">
