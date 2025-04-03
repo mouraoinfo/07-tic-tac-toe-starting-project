@@ -19,7 +19,8 @@ function deriveActivePlayer (gameTurns) {
 
 function App() {
 
-  // o step 83 não teve avanços significativos, apenas explicação de conceitos
+  // o step 87 na versao atual, estah quebrado
+  
   const [gameTurns, setGameTurns] = useState([]);
   // const [activePlayer, SetActivePlayer] = useState('X');
 
