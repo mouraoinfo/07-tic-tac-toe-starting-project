@@ -10,20 +10,20 @@ const inicialGameBoard = [
 
 export default function GameBoard( { onSelectSquare, activePlayerSymbol } ) {
 
-    const [gameBoard, setGameBoard] = useState(inicialGameBoard);
+    // const [gameBoard, setGameBoard] = useState(inicialGameBoard);
 
-    function handleSelectSquare (rowIndex, colIndex) {
-        setGameBoard(
-            (prevGameBoard) => {
-                const updatedBoard = [...prevGameBoard.map( innerArray => [...innerArray] )];
-                updatedBoard[rowIndex][colIndex] = activePlayerSymbol;
-                return updatedBoard;
-            }
-        );
-            onSelectSquare();
-    }
+    // function handleSelectSquare (rowIndex, colIndex) {
+    //     setGameBoard(
+    //         (prevGameBoard) => {
+    //             const updatedBoard = [...prevGameBoard.map( innerArray => [...innerArray] )];
+    //             updatedBoard[rowIndex][colIndex] = activePlayerSymbol;
+    //             return updatedBoard;
+    //         }
+    //     );
+    //         onSelectSquare();
+    // }
 
-  
+  // <p>No passo 84, o autor do tutorial tirou a lógica do componente GAMEBOARD.</p>
 
 
   return (
