@@ -9,13 +9,24 @@ import Log from "./components/Log"
 
 function App() {
 
-  // o step 83 não teve avanços significativos, apenas explicação de conceitos
+  // o step 84 não teve avanços significativos, apenas explicação de conceitos
   const [gameTurns, setGameTurns] = useState([]);
   const [activePlayer, SetActivePlayer] = useState('X');
 
-  function handleSelectSquare () {
+  function handleSelectSquare (rowIndex, colIndex) {
     SetActivePlayer((curActivePlayer) => curActivePlayer === 'X' ? 'O' : 'X');
-    setGameTurns();
+    setGameTurns( prevTurns => {
+
+      let currentPlayer = 'X';
+
+      if (prevTurns.length > 0 &&  prevTurns[0].player === 'X') {
+        currentPlayer="O";
+      }
+
+      const updatedTurns = [ {square: {row: rowIndex, col: colIndex}, player: activePlayer} , ...prevTurns];
+
+      return updatedTurns;
+    });
   }
 
 

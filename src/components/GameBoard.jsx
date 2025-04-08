@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 
 const inicialGameBoard = [
     [null, null, null],
@@ -8,7 +8,7 @@ const inicialGameBoard = [
 
 
 
-export default function GameBoard( { onSelectSquare, activePlayerSymbol } ) {
+export default function GameBoard( { onSelectSquare } ) {
 
     // const [gameBoard, setGameBoard] = useState(inicialGameBoard);
 
@@ -34,7 +34,7 @@ export default function GameBoard( { onSelectSquare, activePlayerSymbol } ) {
                 <ol>
                     {row.map((playerSymbol, colIndex) => (
                         <li key={colIndex}>
-                            <button onClick={ () => handleSelectSquare(rowIndex, colIndex) } >
+                            <button onClick={ onSelectSquare } >
                                 {playerSymbol}
                             </button>
                         </li>
