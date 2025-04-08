@@ -47,7 +47,7 @@ function App() {
            
         </div>
      
-        <Log />
+        <Log turns={gameTurns}/>
   
 
       </main>
