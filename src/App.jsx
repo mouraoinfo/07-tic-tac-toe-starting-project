@@ -5,6 +5,9 @@ import GameBoard from "./components/GameBoard"
 
 import Log from "./components/Log"
 
+
+import { WINNING_COMBINATIONS } from "./winning-combinations"
+
 function deriveActivePlayer(gameTurns) {
   
   let currentPlayer = 'X';
