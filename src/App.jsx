@@ -1,8 +1,10 @@
-import { useState } from "react"
-import Player from "./components/Player"
-import GameBoard from "./components/GameBoard"
-import Log from "./components/Log"
-import { WINNING_COMBINATIONS } from "./winning-combinations"
+import { useState } from "react";
+import Player from "./components/Player.jsx";
+import GameBoard from "./components/GameBoard.jsx";
+import Log from "./components/Log.jsx";
+import GameOver from "./components/GameOver.jsx";
+
+import { WINNING_COMBINATIONS } from "./winning-combinations.js";
 
 const inicialGameBoard = [
   [null, null, null],
@@ -60,7 +62,7 @@ function App() {
   
     }
 
-
+    const hasDraw = gameTurns.length === 9 && !winner;
   
 
   function handleSelectSquare (rowIndex, colIndex) {
@@ -84,7 +86,7 @@ function App() {
             <Player inicialName="Player 2" symbol="O" isActive={activePlayer === 'O'} />
           </ol>
 
-          {winner && <p>You won, {winner}! </p> }
+          {(winner || hasDraw) && < GameOver winner={winner} /> }
 
           <div id="game-board">
             <GameBoard  
@@ -94,7 +96,7 @@ function App() {
           </div>
 
            
-        </div>
+        </div>c 
      
         <Log turns={gameTurns}/>
   
