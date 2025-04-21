@@ -64,7 +64,7 @@ function App() {
           firstSquareSymbol === secondSquareSymbol &&
           firstSquareSymbol === thirdSquareSymbol) {
 
-          winner = firstSquareSymbol;
+          winner = players[firstSquareSymbol];
       }
   
     }
@@ -102,8 +102,19 @@ function App() {
       <main>
         <div id="game-container">
           <ol id="players"  className="highlight-player">
-            <Player inicialName="Player 1" symbol="X" isActive={activePlayer === 'X'} />
-            <Player inicialName="Player 2" symbol="O" isActive={activePlayer === 'O'} />
+            <Player 
+              inicialName="Player 1" 
+              symbol="X" 
+              isActive={activePlayer === 'X'}
+              onChangeName = {handlePlayerNameChange}
+            />
+
+            <Player 
+              inicialName="Player 2" 
+              symbol="O" 
+              isActive={activePlayer === 'O'} 
+              onChangeName = {handlePlayerNameChange}
+            />
           </ol>
 
           {(winner || hasDraw) && (
