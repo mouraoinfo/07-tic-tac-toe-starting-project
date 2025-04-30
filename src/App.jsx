@@ -1,8 +1,14 @@
 import { useState } from "react";
+
+import Navbar from "./components/Navbar.jsx";
+
 import Player from "./components/Player.jsx";
 import GameBoard from "./components/GameBoard.jsx";
 import Log from "./components/Log.jsx";
 import GameOver from "./components/GameOver.jsx";
+
+import AdDisplay from "./components/AdDisplay.jsx";
+
 
 import { WINNING_COMBINATIONS } from "./winning-combinations.js";
 
@@ -109,6 +115,9 @@ function App() {
   }
 
   return (
+
+    <>
+      <Navbar />
       <main>
         <div id="game-container">
           <ol id="players"  className="highlight-player">
@@ -139,12 +148,16 @@ function App() {
           </div>
 
            
-        </div>c 
+        </div>
+
+        {/* Ad placement between game and log */}
+        <AdDisplay />
      
         <Log turns={gameTurns}/>
   
 
       </main>
+      </>
   )
 }
 
