@@ -1,4 +1,4 @@
-# react-practice-tictactoe
+# React Practice Tic-Tac-Toe
 
 ## English
 

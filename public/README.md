@@ -1,4 +1,4 @@
-# react-practice-tictactoe
+# React Practice Tic-Tac-Toe
 
 ## English
 
@@ -15,6 +15,17 @@ This implementation was created for educational purposes to practice essential R
 - Lists and Keys
 - Lifting State Up
 - Derived State
+
+### Customizations
+
+While following the course's guidance, I've added some personal customizations to enhance the project:
+
+- Custom Navbar with project information display
+- Fixed footer with project version and attribution
+- Responsive Google Ads integration
+- Improved layout adjustments for better viewport fitting
+- Background pattern modifications
+- Added "About Project" modal with README content
 
 ### Disclaimer
 
@@ -44,6 +55,17 @@ Esta implementação foi criada com propósitos educacionais para praticar conce
 - Listas e Keys
 - Elevação de Estado
 - Estado Derivado
+
+### Personalizações
+
+Embora seguindo a orientação do curso, adicionei algumas personalizações para aprimorar o projeto:
+
+- Barra de navegação personalizada com informações do projeto
+- Rodapé fixo com versão do projeto e atribuição
+- Integração responsiva com Google Ads
+- Ajustes de layout para melhor adequação à viewport
+- Modificações no padrão de fundo
+- Adição de modal "Sobre o Projeto" com conteúdo do README
 
 ### Aviso
 
