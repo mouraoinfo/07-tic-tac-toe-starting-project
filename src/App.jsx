@@ -8,7 +8,7 @@ import Log from "./components/Log.jsx";
 import GameOver from "./components/GameOver.jsx";
 
 import AdDisplay from "./components/AdDisplay.jsx";
-
+import Footer from './components/Footer';
 
 import { WINNING_COMBINATIONS } from "./winning-combinations.js";
 
@@ -119,21 +119,24 @@ function App() {
     <>
       <Navbar />
       <main>
-        <div id="game-container">
-          <ol id="players"  className="highlight-player">
-            <Player 
-              inicialName={PLAYERS.X} 
-              symbol="X" 
-              isActive={activePlayer === 'X'}
-              onChangeName = {handlePlayerNameChange}
-            />
-
-            <Player 
-              inicialName={PLAYERS.O} 
-              symbol="O" 
-              isActive={activePlayer === 'O'} 
-              onChangeName = {handlePlayerNameChange}
-            />
+      <div id="game-container">
+          <ol id="players" className="highlight-player">
+            <li>
+              <Player 
+                inicialName={PLAYERS.X} 
+                symbol="X" 
+                isActive={activePlayer === 'X'}
+                onChangeName={handlePlayerNameChange}
+              />
+            </li>
+            <li>
+              <Player 
+                inicialName={PLAYERS.O}
+                symbol="O" 
+                isActive={activePlayer === 'O'}
+                onChangeName={handlePlayerNameChange}
+              />
+            </li>
           </ol>
 
           {(winner || hasDraw) && (
@@ -157,6 +160,7 @@ function App() {
   
 
       </main>
+      <Footer />
       </>
   )
 }

@@ -5,6 +5,14 @@
   box-sizing: border-box;
 }
 
+/* Reset básico para garantir comportamento consistente */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 html {
   font-family: 'Roboto Slab', sans-serif;
   line-height: 1.5;
@@ -16,6 +24,9 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -25,41 +36,66 @@ body {
       rgba(250, 176, 103, 0.87)
     ),
     url('bg-pattern-dark.png');
-  background-repeat: repeat;
-  background-size: 100% 100%, 30% 30%, 100% 100%;
-  
+  background-repeat: repeat-x;
+  background-size: 50vw 50vw, 15vw 15vw, 50vw 50vw;
+  background-attachment: fixed;
   min-height: 100vh;
-
+  overflow-x: hidden;
+  
   margin: 0;
-  padding-top: 60px; /* Height of navbar */
+  padding-top: 60px; /* Altura da navbar */
 
   display: flex;
   flex-direction: column;
 }
 
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Propriedades do main para acomodar melhor os elementos */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Muda para flex-start */
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 1rem;
+  min-height: calc(100vh - 60px); /* Usa min-height ao invés de height */
+  gap: 1rem; /* Adiciona espaçamento entre elementos */
+}
 
 header {
   text-align: center;
 }
 
 header img {
-  width: 8rem;
+  width: 6rem; /* Reduzido de 8rem */
   object-fit: contain;
-  margin: 3rem auto 1rem auto;
+  margin: 1rem auto 0.5rem auto; /* Reduzido de 3rem */
   filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.4));
 }
 
 h1 {
   font-family: 'Caprasimo', cursive;
-  font-size: 3rem;
-  margin: 0 auto 3rem auto;
+  font-size: 2rem;
+  margin: 0 auto 1rem auto; /* Reduzido de 2rem */
   color: #3f3b00;
 }
 
+/* Ajuste do game-container para ser mais compacto */
 #game-container {
+  width: 100%;
   max-width: 45rem;
-  margin: 3rem auto;
-  padding: 2rem;
+  margin: 0 auto;
+  padding: 1rem; /* Reduz padding */
   border-radius: 6px;
   background: linear-gradient(#383624, #282617);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -69,7 +105,7 @@ h1 {
 #players {
   list-style: none;
   padding: 0;
-  margin: 1rem 0;
+  margin: 2rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,8 +115,6 @@ h1 {
 #players li {
   display: flex;
   align-items: center;
-  width: 50%;
-  border: 2px solid transparent;
 }
 
 #players.highlight-player li.active {
@@ -107,6 +141,14 @@ h1 {
 
 #players button:hover {
   color: #f8ca31;
+
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 .player {
@@ -119,7 +161,7 @@ h1 {
 .player-name, .user-name {
   display: inline-block;
   width: 10rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #e1dec7;
   text-transform: uppercase;
   margin: 0;
@@ -131,7 +173,7 @@ h1 {
 
 .player input {
   font: inherit;
-  font-size: 1rem;
+  font-size: 0.8rem;
   width: 10rem;
   border: none;
   padding: 0.5rem;
@@ -187,13 +229,14 @@ ol {
   padding: 0;
 }
 
+/* Ajuste do tamanho dos botões do tabuleiro */
 #game-board button {
-  width: 8rem;
-  height: 8rem;
+  width: 6rem; /* Reduzido de 8rem */
+  height: 6rem; /* Reduzido de 8rem */
   border: none;
   background: #aca788;
   color: #3f3b00;
-  font-size: 5rem;
+  font-size: 3.5rem; /* Reduzido de 5rem */
   cursor: pointer;
   font-family: 'Caprasimo', cursive;
   padding: 1rem;
@@ -248,11 +291,12 @@ ol {
   box-shadow: 0 0 20px rgba(255, 187, 0, 0.8);
 }
 
+/* Ajuste do espaçamento do log */
 #log {
   max-width: 20rem;
   color: #3f3b00;
   list-style: none;
-  margin: 2rem auto;
+  margin: 0.5rem auto 0; /* Remove margem inferior */
   padding: 0;
   text-align: center;
 }
@@ -297,15 +341,24 @@ ol {
 
 /* Google ads area ->  .ad-container and mobile responsiveness */
 
+/* Reposicionamento do container de anúncios */
 .ad-container {
   width: 100%;
-  max-width: 728px;        /* Maximum width for leaderboard ad */
-  margin: 2rem auto;       /* Vertical spacing between content */
-  min-height: 90px;        /* Minimum height for leaderboard */
-  background-color: #f5f5f5; /* Light background while loading */
+  max-width: 728px;
+  margin: 0.5rem auto; /* Reduz margem */
+  min-height: 0; /* Remove altura mínima fixa */
+  background-color: transparent; /* Remove background para melhor integração */
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0; /* Previne o container de encolher */
+  position: relative; /* Adiciona posicionamento relativo */
+  overflow: hidden; /* Esconde overflow */
+}
+
+/* Regra para esconder o container quando vazio */
+.ad-container:empty {
+  display: none;
 }
 
 /* Mobile responsiveness */
@@ -313,6 +366,17 @@ ol {
   .ad-container {
       max-width: 320px;    /* Mobile banner width */
       min-height: 100px;   /* Mobile banner height */
+      display: none; /* Opcionalmente, esconde em telas menores */
+  }
+
+  main {
+    padding: 0.5rem;
+    min-height: calc(100vh - 60px);
+    justify-content: flex-start;
+  }
+
+  #game-container {
+    padding: 0.75rem;
   }
 }
 
