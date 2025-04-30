@@ -1,20 +1,33 @@
-import { useState } from 'react';
-
+import { useState, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
+import '../styles/Navbar.css';
 
 function Navbar() {
     const [showReadme, setShowReadme] = useState(false);
+    const [readmeContent, setReadmeContent] = useState('');
+
+    useEffect(() => {
+        // Fetch README content using relative path
+        fetch('/README.md')
+            .then(response => response.text())
+            .then(text => setReadmeContent(text))
+            .catch(err => {
+                console.error('Error loading README:', err);
+                setReadmeContent('# Error\nFailed to load README content.');
+            });
+    }, []);
 
     return (
         <>
             <nav className="navbar">
                 <div className="navbar-content">
                     <a 
-                        href="https:mourao.info" 
+                        href="https://mourao.info" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="nav-link"
                     >
-                        Meu site
+                        My site
                     </a>
                     <button 
                         className="nav-link"
@@ -34,9 +47,9 @@ function Navbar() {
                         >
                             ×
                         </button>
-                        <h1>React Tic-Tac-Toe Game</h1>
-                        <p>Educational project built with React...</p>
-                        {/* Add more README content here */}
+                        <div className="markdown-content">
+                            <ReactMarkdown>{readmeContent}</ReactMarkdown>
+                        </div>
                     </div>
                 </div>
             )}
@@ -45,5 +58,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-// Removed inline CSS. Styles are now in Navbar.css.
