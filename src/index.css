@@ -214,9 +214,8 @@ ol {
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  margin: 3rem 0;
+  margin: 2rem 0;
   padding: 0;
-  flex-direction: column;
 }
 
 #game-board ol {
@@ -230,12 +229,12 @@ ol {
 
 /* Ajuste do tamanho dos botões do tabuleiro */
 #game-board button {
-  width: 6rem; /* Reduzido de 8rem */
-  height: 6rem; /* Reduzido de 8rem */
+  width: 8rem;
+  height: 8rem;
   border: none;
-  background: #aca788;
-  color: #3f3b00;
-  font-size: 3.5rem; /* Reduzido de 5rem */
+  background: #383624;
+  color: #e1dec7;
+  font-size: 5rem;
   cursor: pointer;
   font-family: 'Caprasimo', cursive;
   padding: 1rem;
@@ -377,6 +376,101 @@ ol {
   #game-container {
     padding: 0.75rem;
   }
+}
+
+/* Add these media queries for mobile responsiveness */
+@media screen and (max-width: 768px) {
+    #game-board {
+        gap: 0.5rem;
+        margin: 0.5rem 0;
+    }
+
+    #game-board button {
+        width: 6rem;
+        height: 6rem;
+        font-size: 4rem;
+        padding: 0.5rem;
+    }
+
+    #game-container {
+        padding: 0.75rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #game-board button {
+        width: 5rem;
+        height: 5rem;
+        font-size: 3rem;
+        padding: 0.4rem;
+    }
+
+    #game-container {
+        padding: 0.75rem;
+        margin: 0.5rem;
+    }
+
+    ol#players {
+        gap: 1rem;
+        margin: 0.75rem 0;
+    }
+
+    .player {
+        padding: 0.4rem;
+    }
+
+    .player-name {
+        width: 8rem;
+        font-size: 0.75rem;
+    }
+
+    .player-symbol {
+        font-size: 1rem;
+        margin-left: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #game-board {
+        gap: 0.3rem;
+    }
+
+    #game-board button {
+        width: 4.5rem;
+        height: 4.5rem;
+        font-size: 2.5rem;
+        padding: 0.25rem;
+    }
+
+    #game-container {
+        padding: 0.5rem;
+        margin: 0.25rem;
+    }
+
+    .player-name {
+        width: 6rem;
+    }
+
+    #game-over h2 {
+        font-size: 2.5rem;
+    }
+
+    #game-over p {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    #game-board button {
+        width: 4rem;
+        height: 4rem;
+        font-size: 2.5rem;
+        padding: 0.25rem;
+    }
+
+    #game-container {
+        padding: 0.25rem;
+    }
 }
 
 @keyframes slide-in-from-left {
